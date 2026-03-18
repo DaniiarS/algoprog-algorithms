@@ -1,0 +1,46 @@
+length = int(input())
+line = list(input())
+
+#Sorts characters in alphabetic order
+def sortList(line):
+    for i in range(length):
+        for j in range(length - 1):
+            if line[j + 1] < line[j]:
+                line[j], line[j + 1] = line[j + 1], line[j]
+    return line
+
+line = sortList(line)
+
+myDict = []
+equalChars = 1
+i = 0
+
+while True:
+    if i == length - 1:
+        myDict.append([line[i], equalChars])
+        break
+    if line[i] != line[i + 1]:
+        myDict.append([line[i], equalChars])
+        equalChars = 0
+    equalChars += 1
+    i += 1
+
+dictLength = len(myDict)
+
+if dictLength == 1:
+    print(myDict[0][0]*myDict[0][-1])
+    quit()
+
+for i in range(dictLength):
+    for j in range(dictLength - 1):
+        if myDict[j][-1] < myDict[j  + 1][-1]:
+            myDict[j], myDict[j + 1] = myDict[j + 1], myDict[j]
+
+if myDict[0][0] != 'A':
+    for i in range(dictLength):
+        if myDict[i][-1]%2 != 0:
+            myDict[i][-1] -= 1
+        
+
+
+print(myDict)
