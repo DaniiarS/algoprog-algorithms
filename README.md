@@ -20,7 +20,7 @@ The solutions in this repository include problems related to:
 
 ## 🛠️ Technologies
 
-- Python (main language)
+- Python (main language), C++
 
 ## 🎯 Goals
 
